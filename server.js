@@ -52,10 +52,15 @@ app.post("/api/friends", function(req, res) {
 
 // Starts the server to begin listening
 // =============================================================
+/*
+*/
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
 
+
+// finds the best match.
+// if there is a tie, returns the friend with the lowest index
 bestMatch = function(index){
 	var totalDifference=100;
 	var matchindex
@@ -68,6 +73,7 @@ bestMatch = function(index){
 			if (newDifference < totalDifference){
 				totalDifference = newDifference;
 				matchindex = i;
+				console.log("match found! matchindex: " + matchindex);
 			}
 		}
 	}

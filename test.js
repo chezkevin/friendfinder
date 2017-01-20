@@ -14,7 +14,6 @@ var friends=[{
 
 bestMatch = function(index){
 	var totalDifference=100;
-	console.log("friends.length: " + friends.length);
 	for (var i = 0; i < friends.length ; i++){
 		var newDifference = 0;
 		if (i != index){
@@ -24,9 +23,12 @@ bestMatch = function(index){
 			if (newDifference < totalDifference){
 				totalDifference = newDifference;
 				matchindex = i;
+				console.log("match found! matchindex: " + matchindex);
 			}
 		}
+		console.log("current matchindex: " + matchindex);
 	}
+	console.log("final matchindex: " + matchindex);
 	return matchindex;
 }
 
