@@ -31,7 +31,7 @@ app.get("/", function(req, res) {
 
 // routes to survey page
 app.get("/survey", function(req, res) {
-  res.sendFile(path.join(__dirname, "./app/public/survey.html"));
+  res.sendFile(path.join(__dirname, "app/public/survey.html"));
 });
 
 // link to apiRoutes file passing the app variable.
@@ -43,6 +43,9 @@ app.get("/survey", function(req, res) {
 // API Routes
 // belongs in apiRoutes.js
 // =============================================================
+
+//try to require apiroutes using module exports
+//var apiroutes = require("./app/routing/apiRoutes.js");
 
 // displays all friends in array
 app.get("/api/friends", function(req, res) {
