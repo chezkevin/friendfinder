@@ -7,7 +7,8 @@ var path = require("path");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = 3000;
+// setting the env variable allows this to be deployed easily to Heroku 
+var PORT = process.env.PORT || 8080; 
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -32,6 +33,12 @@ app.get("/", function(req, res) {
 app.get("/survey", function(req, res) {
   res.sendFile(path.join(__dirname, "app/public/survey.html"));
 });
+
+// link to apiRoutes file passing the app variable.
+//require('./app/routing/apiRoutes.js')(app);
+
+// link to htmlRoutes file passing the app variable.
+//require('./app/routing/htmlRoutes.js')(app);
 
 // API Routes
 // belongs in apiRoutes.js
