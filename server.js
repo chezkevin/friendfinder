@@ -31,7 +31,7 @@ app.get("/", function(req, res) {
 
 // routes to survey page
 app.get("/survey", function(req, res) {
-  res.sendFile(path.join(__dirname, "app/public/survey.html"));
+  res.sendFile(path.join(__dirname, "./app/public/survey.html"));
 });
 
 // link to apiRoutes file passing the app variable.
